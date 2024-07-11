@@ -9,7 +9,7 @@ public class CadastroBaseTest extends BaseTest {
         CadastroBaseTest page = new CadastroBaseTest(getDriver());
 
         String resultadoFinal = page.clicarExcluir()
-                .informarIdUsuario("333")
+                .informarIdBase("01")
                 .clicarExcluirBase();
         try{
             getDriver().wait();
