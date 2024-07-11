@@ -8,20 +8,12 @@ public class CadastroBaseTest extends BaseTest {
     public void validarCadastro() {
         CadastroBaseTest page = new CadastroBaseTest(getDriver());
 
-        String resultadoFinal = page.informarIdBase("01")
+        String resultadoFinal = page.clicarExcluir()
                 .informarIdUsuario("333")
-                .informarNomeBase("Armazém")
-                .informarDataCadastro("23/05/2024")
-                .informarResponsavelBase("Milena")
-                .informarTelefoneBase("40028922")
-                .informarCelularBase("707707070")
-                .informarEmailBase("milenamakarkin@gmail.com")
-                .selecionarSim()
-                .clicarCadastro()
-                //.buscarResultadoCadastro();
+                .clicarExcluirBase();
         try{
             getDriver().wait();
-            Assert.assertTrue(resultadoFinal.contains("Base cadastrada com sucesso!"));
+            Assert.assertTrue(resultadoFinal.contains("Base excluída com sucesso!"));
         }
         catch (Exception e){
             System.out.println(e.toString());
